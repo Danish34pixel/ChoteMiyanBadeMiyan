@@ -9,7 +9,7 @@ React, Vite, JavaScript, Tailwind CSS, React Router, Lucide React, and Framer Mo
 3. Start the frontend with `npm run dev`.
 4. Ensure the backend allows the Vite origin in its CORS configuration.
 
-The Vite server defaults to `http://localhost:5173`. `VITE_API_BASE_URL` is required and is read from the frontend environment at build time; the example value points to the Render backend. Set it to `http://localhost:3000/api/v1` in your local `.env` when you want to use a local backend. Set the same variable in the frontend deployment environment and rebuild/redeploy after changing it. Frontend environment variables prefixed with `VITE_` are public and must never contain credentials or server secrets.
+The Vite server defaults to `http://localhost:5173`. `VITE_API_BASE_URL` is read from the frontend environment at build time; when unset, the Render backend URL is used. Set it to `http://localhost:3000/api/v1` in your local `.env` when you want to use a local backend. Set the same variable in the frontend deployment environment and rebuild/redeploy after changing it. Frontend environment variables prefixed with `VITE_` are public and must never contain credentials or server secrets.
 
 The original supplied brand artwork is stored as `public/brand-logo.png` and rendered without cropping, filtering, or alteration. The visual palette is sampled from the artwork: deep black, aqua/turquoise, copper orange, and warm off-white. The footer Instagram link uses the handle printed in the logo.
 
