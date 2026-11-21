@@ -1,6 +1,9 @@
 const configuredBase = import.meta.env.VITE_API_BASE_URL?.trim();
-export const API_BASE_URL = (configuredBase || 'http://localhost:3000/api/v1')
-  .replace(/\/+$/, '');
+if (!configuredBase) {
+  throw new Error('VITE_API_BASE_URL must be set in the frontend environment.');
+}
+
+export const API_BASE_URL = configuredBase.replace(/\/+$/, '');
 
 export class ApiError extends Error {
   constructor(message, status, requestId, errors = []) {
